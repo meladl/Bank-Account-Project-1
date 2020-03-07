@@ -1,16 +1,12 @@
-public class BankAccount {
-    public BankAccount(int anAccountNumber){
-       accountNumber = anAccountNumber;
-        balance = 0;       
+public class Savings {
+    public Savings(){
+        balance=0; 
+        interset = 0;
     }
-    public BankAccount(int anAccountNumber, double intialbalance){
-       accountNumber = anAccountNumber;
-        balance = intialbalance;
-    } 
-    public int getAccountNumber(){
-      return accountNumber;
+    public Savings(double intialbalance, double intersetRate){
+        balance=intialbalance;
+        interset = intersetRate;
     }
-    
     public void deposit(double amount){
         if (amount < 0)
             System.out.println("Please Enter Correct Amount !");
@@ -20,6 +16,7 @@ public class BankAccount {
         System.out.println("A " + "$" + amount + " is successfully deposited to your account.");
         }
     }
+
     public void withdraw(double amount){
         if (amount < 0)
             System.out.println("Please Enter Correct Amount !");
@@ -34,11 +31,15 @@ public class BankAccount {
     }
     }
     public double getBalance(){
-        return balance;           
+        return balance;         
     }
+    public void addInterset(){
+        double newBalance = balance * interset;
+        balance = newBalance;
+    }
+    
     private double balance;
-    private int accountNumber;
-}
+    private double interset;
    
-
+}
 
